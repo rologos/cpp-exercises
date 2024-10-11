@@ -13,11 +13,9 @@ std::vector<int> get_next_row(const std::vector<int> & last_row) {
     return next_row;
 }
 auto generate_triangle(int rows){
-    std::vector<int> data;
-    std::vector<std::vector<int>> triangle;
-    for (int row = 0 ; row < rows ; ++row) {
-        data = get_next_row(data);
-        triangle.push_back(data);
+    std::vector<std::vector<int>> triangle{ {1} };
+    for (int row = 1 ; row < rows ; ++row) {
+        triangle.push_back(get_next_row(triangle.back()));
     }
     return triangle;
 }
