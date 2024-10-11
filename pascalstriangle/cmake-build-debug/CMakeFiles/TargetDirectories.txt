@@ -1,0 +1,3 @@
+/Users/rolandogarcia/CLionProjects/cpp-exercises/cpp-exercises/pascalstriangle/cmake-build-debug/CMakeFiles/pascalstriangle.dir
+/Users/rolandogarcia/CLionProjects/cpp-exercises/cpp-exercises/pascalstriangle/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/rolandogarcia/CLionProjects/cpp-exercises/cpp-exercises/pascalstriangle/cmake-build-debug/CMakeFiles/rebuild_cache.dir
