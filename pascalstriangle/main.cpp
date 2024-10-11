@@ -1,15 +1,6 @@
 #include <iostream>
 #include <vector>
 
-void generate_triangle() {
-    std::vector<int> data{ 1 };
-
-    for (auto number : data) {
-        std::cout << number << ' ';
-    }
-    std::cout << '\n';
-}
-
 std::vector<int> get_next_row(const std::vector<int> & last_row) {
     std::vector<int> next_row { 1 };
     if (last_row.empty()) {
@@ -20,7 +11,18 @@ std::vector<int> get_next_row(const std::vector<int> & last_row) {
     }
     next_row.emplace_back(1);
     return next_row;
+}
+auto generate_triangle(int rows){
+    std::vector<int> data;
+    std::vector<std::vector<int>> triangle;
+    for (int row = 0 ; row < rows ; ++row) {
+        data = get_next_row(data);
+        triangle.push_back(data);
+    }
+    return triangle;
+}
+
 
 int main() {
-    generate_triangle();
+    generate_triangle(3);
 }
