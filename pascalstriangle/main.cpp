@@ -1,3 +1,4 @@
+#include <format>
 #include <iostream>
 #include <vector>
 #include <iterator>
@@ -31,8 +32,25 @@ auto generate_triangle(int rows){
     return triangle;
 }
 
+void show_vectors(std::ostream& s,
+    const std::vector<std::vector<int>>& v, size_t width = 6)
+{
+    const auto gaps  = width/2;
+    std::string spaces(v.back().size() * gaps, ' ');
+    for (const auto& row : v)
+    {
+        s << spaces;
+        if (spaces.size() > gaps)
+            spaces.resize(spaces.size()- gaps);
+        for (const auto& data : row)
+        {
+            s << std::format("{: ^{}}", data, width);
+        }
+        s << '\n';
+    }
+}
 
 int main() {
     auto triangle = generate_triangle(16);
-    std::cout << triangle;
+    show_vectors(std::cout, triangle);
 }
