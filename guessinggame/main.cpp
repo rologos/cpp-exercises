@@ -12,10 +12,19 @@ unsigned input () {
             std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Please enter a number.\n>";
     }
+    return number;
 }
 
-int main()
-{
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+void guess_number (unsigned number) {
+    std::cout << "Guess the number.\n>";
+    unsigned guess = input();
+    while (guess != number) {
+        std::cout << "Guess is wrong. Try again\n>";
+        guess = input();
+    }
+    std::cout << "Well done.\n>";
+}
+
+int main() {
+    guess_number( some_const_number());
 }
