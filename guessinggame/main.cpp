@@ -19,7 +19,7 @@ void guess_number (unsigned number) {
     std::cout << "Guess the number.\n>";
     unsigned guess = input();
     while (guess != number) {
-        std::cout << "Guess is wrong. Try again\n>";
+        std::cout << guess <<" is wrong. Try again\n>";
         guess = input();
     }
     std::cout << "Well done.\n>";
