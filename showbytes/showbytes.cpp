@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h> // For atoi()
 
 typedef unsigned char *byte_pointer;
 
@@ -7,8 +8,8 @@ void show_bytes( byte_pointer start, size_t len) {
     int i;
     for ( i = 0; i < len; i++) {
         printf(" %.2x", start[i]);
-    printf("\n");
     }
+    printf("\n");
 }
 
 void show_int (int x) {
@@ -22,8 +23,11 @@ void show_pointer (void *x) {
 }
 
 
-int main () {
-    int ival = 23;
+int main (int argc, char *argv[]) {
+
+    int val = atoi(argv[1]);
+
+    int ival = val;
     float fval = (float) ival;
     int *pval = &ival;
     show_int(ival);
