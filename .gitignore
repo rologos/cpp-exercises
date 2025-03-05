@@ -2,6 +2,7 @@ pascalstriangle/cmake-build-debug/
 guessinggame/cmake-build-debug/
 **/.idea/
 
+*.dSYM
 *.o
 *.a
 *.so
