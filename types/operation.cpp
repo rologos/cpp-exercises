@@ -25,16 +25,16 @@ struct calculator {
     void printEnum() const {
         switch (op) {
             case operation::Add:
-                std::cout << "Color: Add" << std::endl;
+                std::cout << "operation: Add" << std::endl;
                 break;
             case operation::Subtract:
-                std::cout << "Color: Subtract" << std::endl;
+                std::cout << "operation: Subtract" << std::endl;
                 break;
             case operation::Multiply:
-                std::cout << "Color: Multiply" << std::endl;
+                std::cout << "operation: Multiply" << std::endl;
                 break;
             default:
-                std::cout << "Color: Divide" << std::endl;
+                std::cout << "operation: Divide" << std::endl;
                 break;
         };
     };
@@ -60,6 +60,12 @@ struct calculator {
 int main() {
 
     calculator myCalculator = operation::Divide;
+    calculator addCalculator{operation::Add};
+    calculator multCalculator(operation::Multiply);
     myCalculator.printEnum();
+    addCalculator.printEnum();
+    multCalculator.printEnum();
     printf("This is the result of the calc: %d \n", myCalculator.calculate(14,2));
+    printf("This is the result of the calc: %d \n", addCalculator.calculate(14,2));
+    printf("This is the result of the calc: %d \n", multCalculator.calculate(14,2));
 };
