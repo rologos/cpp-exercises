@@ -13,6 +13,9 @@ struct calculator {
 
     operation op;
 
+    calculator()  {
+    };
+
     calculator(operation operationValue) : op (operationValue) {
     };
 
@@ -62,6 +65,9 @@ int main() {
     calculator myCalculator = operation::Divide;
     calculator addCalculator{operation::Add};
     calculator multCalculator(operation::Multiply);
+    calculator unusedCalc;
+    calculator unusedCalc1{};
+    calculator unusedCalc2{};
     myCalculator.printEnum();
     addCalculator.printEnum();
     multCalculator.printEnum();
