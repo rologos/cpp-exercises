@@ -1,12 +1,15 @@
-include <iostream>
-include <string>
-include <memory>
+#include <iostream>
 
 struct Node {
+    int data;
+    Node* prev;
+    Node* next;
 
-    std::string data;
-    std::shared_ptr<Node> nextNode;
-    std::shared_ptr<Node> previousNode;
+    Node(int data){
+        this->data = data;
+        this->prev = nullptr;
+        this->next = nullptr;
+    }
 };
 
 class doublyLinkedList {
@@ -15,17 +18,7 @@ private:
     std::shared_ptr<Node> head;
 
 public:
-    void insert(const std::string& str) {
-        auto newNode = new Node();
-        newNode.data = str;
-        newNode->nextNode = nullptr;
-        newNode->previousNode = nullptr;
-
-    if ( head == nullptr ) {
-        head = newNode;
-    } else {
-
+    void insertBeg(int data) {
 
     }
- 
 };
