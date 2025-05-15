@@ -14,7 +14,7 @@ private:
 public:
     void displayTimestamp() {
 
-        printf("This is the timestamp: %ld\n", timestamp);
+        printf("This is the timestamp: %s\n", ctime(&timestamp));
 
     }
 };
