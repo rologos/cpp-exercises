@@ -10,7 +10,23 @@ enum class Operation {
 struct Calculator {
 
   Calculator (Operation op) {
-    op = op;
+    this->op = op;
+  }
+  int calculate (int a, int b){
+    switch (op) {
+      case Operation::Add:
+        return a + b;
+        break;
+      case Operation::Subtract:
+        return a - b;
+        break;
+      case Operation::Multiply:
+        return a * b;
+        break;
+      default:
+        return a / b;
+        break;
+    }
   }
   private:
     Operation op;
@@ -37,9 +53,12 @@ struct Calculator {
 }
 
 int main () {
-  Operation op{ Operation::Divide};
-  printf("This operation is to ");
+  Operation op {Operation::Divide};
+  Calculator calc{op};
+  int a{10};
+  int b{5};
+  printf("The operation of ");
   printEnum(op);
-  printf("\n");
+  printf(" on %d and %d is %d\n",a,b,calc.calculate(a,b));
   return 0;
 }
