@@ -7,6 +7,15 @@ enum class Operation {
   Divide,
 };
 
+struct Calculator {
+
+  Calculator (Operation op) {
+    op = op;
+  }
+  private:
+    Operation op;
+};
+
  void printEnum(Operation op){
   switch (op) {
     case Operation::Add:{
