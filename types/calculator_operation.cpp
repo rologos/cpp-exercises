@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <string>
 
 enum class Operation {
   Add,
@@ -32,22 +33,26 @@ struct Calculator {
     Operation op;
 };
 
- void printEnum(Operation op){
+std::string printEnum(Operation op){
   switch (op) {
     case Operation::Add:{
-      printf("Add");
+      std::string st ="Add";
+      return st;
       break;
     }
     case Operation::Subtract:{
-      printf("Subtract");
+      std::string st ="Subtract";
+      return st;
       break;
     }
     case Operation::Multiply:{
-      printf("Multiply");
+      std::string st ="Multiply";
+      return st;
       break;
     }
     default:
-      printf("Divide");
+      std::string st ="Divide";
+      return st;
       break;
   }
 }
@@ -57,8 +62,8 @@ int main () {
   Calculator calc{op};
   int a{10};
   int b{5};
-  printf("The operation of ");
-  printEnum(op);
-  printf(" on %d and %d is %d\n",a,b,calc.calculate(a,b));
+  Calculator calc_add {Operation::Add};
+  printf("The operation %s on %d and %d is %d\n",printEnum(op).c_str(),a,b,calc.calculate(a,b));
+  printf("The operation %s on %d and %d is %d\n",printEnum(Operation::Add).c_str(),a,b,calc_add.calculate(a,b));
   return 0;
 }
