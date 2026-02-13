@@ -2,9 +2,18 @@
 
 struct Element {
   Element* next{};
+  Element* previous{};
   void insert_after(Element* new_element) {
     new_element->next = next;
+    new_element->previous = this;
+    if (next) next->previous = new_element;
     next = new_element;
+  }
+  void insert_before(Element* new_element) {
+    new_element->previous = previous;
+    new_element->next = this;
+    if(previous) previous->next = new_element;
+    previous = new_element;
   }
   char prefix[2];
   short operating_number;
@@ -26,13 +35,8 @@ int main() {
 
   for(Element* cursor = &trooper1; cursor; cursor = cursor->next) {
     printf("Storm Trooper %c%c-%d\n", cursor->prefix[0], cursor->prefix[1], cursor->operating_number);
-  }
-}
-  Element* next{};
-  void inster_after(Element* new_element) {
-    new_element->next = next;
-    next = new_element;
-  }
-  char prefix[2];
-  short operating_number;
+  };
+  for(Element* cursor = &trooper3; cursor; cursor = cursor->previous) {
+    printf("Storm Trooper %c%c-%d\n", cursor->prefix[0], cursor->prefix[1], cursor->operating_number);
+  };
 }
